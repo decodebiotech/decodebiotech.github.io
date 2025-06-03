@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Decode Biotech</title>
+  <style>
+    /* Biotech color theme */
+    :root {
+      --primary-green: #2e7d32;
+      --secondary-blue: #1565c0;
+      --background-light: #f4faff;
+      --text-dark: #1a1a1a;
+      --accent-light: #c8e6c9;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: var(--background-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding-bottom: 25px;
+      border-bottom: 3px solid var(--primary-green);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    header img {
+      height: 60px;
+    }
+
+    h1 {
+      color: var(--primary-green);
+      margin: 0;
+      font-weight: 700;
+      font-size: 2.8rem;
+    }
+
+    header p {
+      color: var(--secondary-blue);
+      font-style: italic;
+      margin-top: 5px;
+      font-size: 1.2rem;
+    }
+
+    nav {
+      margin: 25px 0;
+      text-align: center;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 0.4s;
+      opacity: 0;
+    }
+
+    nav a {
+      margin: 0 18px;
+      text-decoration: none;
+      color: var(--primary-green);
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--secondary-blue);
+    }
+
+    section {
+      margin-bottom: 50px;
+      background: white;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(15px);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    section:nth-of-type(1) {
+      animation-delay: 0.6s;
+    }
+    section:nth-of-type(2) {
+      animation-delay: 0.8s;
+    }
+    section:nth-of-type(3) {
+      animation-delay: 1.0s;
+    }
+    section:nth-of-type(4) {
+      animation-delay: 1.2s;
+    }
+
+    h2 {
+      color: var(--secondary-blue);
+      margin-bottom: 15px;
+      font-weight: 700;
+      border-bottom: 2px solid var(--accent-light);
+      padding-bottom: 5px;
+    }
+
+    article h3 {
+      color: var(--primary-green);
+      margin-bottom: 8px;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    a {
+      color: var(--primary-green);
+    }
+
+    a:hover {
+      color: var(--secondary-blue);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #ccc;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 1.4s;
+      opacity: 0;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Placeholder graphics styling */
+    .graphic {
+      width: 60px;
+      height: 60px;
+      background: var(--accent-light);
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 15px;
+      vertical-align: middle;
+      box-shadow: inset 0 0 10px rgba(46,125,50,0.3);
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- Logo placeholder -->
+    <img src="logo.png" alt="Decode Biotech Logo" />
+    <div>
+      <h1>Decode Biotech</h1>
+      <p>Breaking down complex biotechnology topics into simple insights</p>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Decode Biotech</h2>
+    <p>
+      Welcome to Decode Biotech! I’m Moni Shankar Das, and this blog is dedicated to sharing my findings, lab work, and breaking down large biotechnology concepts for easy understanding.
+      Stay tuned for the latest news and research in the biotech world.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Latest Projects</h2>
+    <article>
+      <div class="graphic"></div>
+      <h3>Project 1: Plant Tissue Culture Experiment</h3>
+      <p>Detailed insights into my recent experiment with plant tissue culture and how magnetic water might improve growth rates.</p>
+    </article>
+    <article>
+      <div class="graphic"></div>
+      <h3>Project 2: Gene Editing Techniques Review</h3>
+      <p>An overview of CRISPR and other emerging gene editing technologies with potential applications.</p>
+    </article>
+  </section>
+
+  <section id="news">
+    <h2>Biotech News</h2>
+    <ul>
+      <li><strong>June 2025:</strong> New breakthroughs in synthetic biology announced.</li>
+      <li><strong>May 2025:</strong> Advances in monoclonal antibody production techniques.</li>
+      <li><strong>April 2025:</strong> Global biotech startups see record funding this quarter.</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email me at: <a href="mailto:decodebiotech@example.com">decodebiotech@example.com</a></p>
+    <p>Follow me on social media: 
+      <a href="https://twitter.com/decodebiotech" target="_blank" rel="noopener">Twitter</a> | 
+      <a href="https://linkedin.com/in/monishankardas" target="_blank" rel="noopener">LinkedIn</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Decode Biotech. All rights reserved.</p>
+  </footer>
+
+</body>
+      </html>
