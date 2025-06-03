@@ -1,235 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Decode Biotech</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* Biotech color theme */
-    :root {
-      --primary-green: #2e7d32;
-      --secondary-blue: #1565c0;
-      --background-light: #f4faff;
-      --text-dark: #1a1a1a;
-      --accent-light: #c8e6c9;
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://www.transparenttextures.com/patterns/molecules.png');
+      background-color: #e6f5ea;
+      color: #1a3d2c;
+      animation: fadeIn 2s ease-in;
     }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: var(--background-light);
-      color: var(--text-dark);
-      line-height: 1.6;
-      overflow-x: hidden;
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     header {
-      text-align: center;
-      padding-bottom: 25px;
-      border-bottom: 3px solid var(--primary-green);
       display: flex;
-      justify-content: center;
       align-items: center;
-      gap: 15px;
-      animation: fadeIn 1s ease forwards;
+      justify-content: space-between;
+      padding: 20px 40px;
+      background-color: #b3e6cc;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
-    header img {
+    .logo {
       height: 60px;
     }
 
-    h1 {
-      color: var(--primary-green);
-      margin: 0;
-      font-weight: 700;
-      font-size: 2.8rem;
+    .site-name {
+      font-size: 28px;
+      font-weight: bold;
+      color: #0f5132;
     }
 
-    header p {
-      color: var(--secondary-blue);
-      font-style: italic;
-      margin-top: 5px;
-      font-size: 1.2rem;
-    }
-
-    nav {
-      margin: 25px 0;
+    .description {
       text-align: center;
-      animation: fadeIn 1.5s ease forwards;
-      animation-delay: 0.4s;
-      opacity: 0;
-    }
-
-    nav a {
-      margin: 0 18px;
-      text-decoration: none;
-      color: var(--primary-green);
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: var(--secondary-blue);
+      margin: 30px;
+      font-size: 18px;
     }
 
     section {
-      margin-bottom: 50px;
+      padding: 40px;
+      border-bottom: 1px solid #cfe6d4;
+    }
+
+    section h2 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 24px;
+      color: #14532d;
+    }
+
+    section p {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    .newsletter-popup {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
       background: white;
-      padding: 20px 30px;
-      border-radius: 12px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-      opacity: 0;
-      transform: translateY(15px);
-      animation: fadeInUp 1s ease forwards;
+      border: 2px solid #198754;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      z-index: 1000;
     }
 
-    section:nth-of-type(1) {
-      animation-delay: 0.6s;
-    }
-    section:nth-of-type(2) {
-      animation-delay: 0.8s;
-    }
-    section:nth-of-type(3) {
-      animation-delay: 1.0s;
-    }
-    section:nth-of-type(4) {
-      animation-delay: 1.2s;
+    .comment-section, .newsletter {
+      padding: 40px;
+      background-color: #d9f7e0;
     }
 
-    h2 {
-      color: var(--secondary-blue);
-      margin-bottom: 15px;
-      font-weight: 700;
-      border-bottom: 2px solid var(--accent-light);
-      padding-bottom: 5px;
+    .socials {
+      text-align: center;
+      padding: 30px;
     }
 
-    article h3 {
-      color: var(--primary-green);
-      margin-bottom: 8px;
+    .socials a {
+      margin: 0 10px;
+      font-size: 24px;
+      color: #1c4532;
+      transition: transform 0.3s;
     }
 
-    ul {
-      list-style-type: disc;
-      padding-left: 20px;
-    }
-
-    ul li {
-      margin-bottom: 10px;
-      font-weight: 500;
-    }
-
-    a {
-      color: var(--primary-green);
-    }
-
-    a:hover {
-      color: var(--secondary-blue);
+    .socials a:hover {
+      transform: scale(1.2);
+      color: #198754;
     }
 
     footer {
+      background-color: #b3e6cc;
       text-align: center;
-      font-size: 0.9rem;
-      color: #555;
-      margin-top: 60px;
-      padding-top: 20px;
-      border-top: 1px solid #ccc;
-      animation: fadeIn 1s ease forwards;
-      animation-delay: 1.4s;
-      opacity: 0;
+      padding: 20px;
+      font-size: 14px;
+      color: #0f5132;
     }
-
-    /* Animations */
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Placeholder graphics styling */
-    .graphic {
-      width: 60px;
-      height: 60px;
-      background: var(--accent-light);
-      border-radius: 50%;
-      display: inline-block;
-      margin-right: 15px;
-      vertical-align: middle;
-      box-shadow: inset 0 0 10px rgba(46,125,50,0.3);
-    }
-
   </style>
 </head>
-<body>
 
+<body>
   <header>
-    <!-- Logo placeholder -->
-    <img src="logo.png" alt="Decode Biotech Logo" />
-    <div>
-      <h1>Decode Biotech</h1>
-      <p>Breaking down complex biotechnology topics into simple insights</p>
-    </div>
+    <img src="logo.png" alt="Decode Biotech Logo" class="logo">
+    <div class="site-name">Decode Biotech</div>
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div class="description">
+    Decoding complex biotech knowledge, sharing real lab work, and simplifying research for learners and professionals alike.
+  </div>
 
-  <section id="about">
-    <h2>About Decode Biotech</h2>
-    <p>
-      Welcome to Decode Biotech! I’m Moni Shankar Das, and this blog is dedicated to sharing my findings, lab work, and breaking down large biotechnology concepts for easy understanding.
-      Stay tuned for the latest news and research in the biotech world.
-    </p>
+  <section>
+    <h2><i class="fas fa-newspaper"></i> Biotech News</h2>
+    <p>Stay updated with the latest in biotechnology from around the world. Curated with insights and clarity.</p>
   </section>
 
-  <section id="projects">
-    <h2>Latest Projects</h2>
-    <article>
-      <div class="graphic"></div>
-      <h3>Project 1: Plant Tissue Culture Experiment</h3>
-      <p>Detailed insights into my recent experiment with plant tissue culture and how magnetic water might improve growth rates.</p>
-    </article>
-    <article>
-      <div class="graphic"></div>
-      <h3>Project 2: Gene Editing Techniques Review</h3>
-      <p>An overview of CRISPR and other emerging gene editing technologies with potential applications.</p>
-    </article>
+  <section>
+    <h2><i class="fas fa-tools"></i> Using Biotech Equipment</h2>
+    <p>Learn how to use essential biotechnology equipment with easy-to-follow guides and tips from real lab work.</p>
   </section>
 
-  <section id="news">
-    <h2>Biotech News</h2>
-    <ul>
-      <li><strong>June 2025:</strong> New breakthroughs in synthetic biology announced.</li>
-      <li><strong>May 2025:</strong> Advances in monoclonal antibody production techniques.</li>
-      <li><strong>April 2025:</strong> Global biotech startups see record funding this quarter.</li>
-    </ul>
+  <section>
+    <h2><i class="fas fa-flask"></i> Experiment How-Tos</h2>
+    <p>Step-by-step breakdowns of common and advanced biotech experiments with practical observations.</p>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email me at: <a href="mailto:decodebiotech@example.com">decodebiotech@example.com</a></p>
-    <p>Follow me on social media: 
-      <a href="https://twitter.com/decodebiotech" target="_blank" rel="noopener">Twitter</a> | 
-      <a href="https://linkedin.com/in/monishankardas" target="_blank" rel="noopener">LinkedIn</a>
-    </p>
+  <section>
+    <h2><i class="fas fa-scroll"></i> Research Papers Made Simple</h2>
+    <p>Deconstructing complex research into easy language. Perfect for students, enthusiasts, and new researchers.</p>
   </section>
+
+  <section>
+    <h2><i class="fas fa-vials"></i> My Lab Work</h2>
+    <p>Original lab notes, observations, and experiments conducted personally. Transparent and insightful.</p>
+  </section>
+
+  <div class="newsletter">
+    <h2>Subscribe to Our Newsletter</h2>
+    <form>
+      <input type="email" placeholder="Your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+
+  <div class="newsletter-popup" id="popup">
+    <p>Stay connected! Subscribe to our biotech newsletter for updates.</p>
+    <form>
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+
+  <div class="comment-section">
+    <h2>Leave a Comment</h2>
+    <form>
+      <input type="text" placeholder="Name" required><br>
+      <textarea placeholder="Your comment" required></textarea><br>
+      <button type="submit">Post Comment</button>
+    </form>
+  </div>
+
+  <div class="socials">
+    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+  </div>
 
   <footer>
-    <p>© 2025 Decode Biotech. All rights reserved.</p>
+    <p>&copy; 2025 Decode Biotech. All rights reserved. | Made with 💡 by DecodeBiotech</p>
   </footer>
 
+  <script>
+    // Show newsletter popup after 10 seconds
+    setTimeout(() => {
+      document.getElementById('popup').style.display = 'block';
+    }, 10000);
+  </script>
 </body>
-      </html>
+
+</html>
