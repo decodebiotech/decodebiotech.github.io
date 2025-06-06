@@ -3,12 +3,9 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Biotech News - Decode Biotech</title>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     body {
       margin: 0;
@@ -16,13 +13,14 @@
       background: url('https://www.transparenttextures.com/patterns/molecules.png');
       background-color: #e6f5ea;
       color: #1a3d2c;
-      animation: fadeIn 2s ease-in;
+      animation: fadeIn 1.2s ease-in;
     }
 
     @keyframes fadeIn {
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
@@ -47,51 +45,48 @@
       color: #0f5132;
     }
 
-    section.content {
+    .back-home {
+      padding: 20px 40px;
+    }
+
+    .back-home a {
+      background-color: #198754;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+    }
+
+    .back-home a:hover {
+      background-color: #145c42;
+    }
+
+    .description {
+      text-align: center;
+      margin: 30px;
+      font-size: 18px;
+    }
+
+    section {
       padding: 40px;
+      border-bottom: 1px solid #cfe6d4;
       background-color: #f2fff6;
       margin: 0 10px 20px;
       border-radius: 15px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     }
 
-    section.content h1 {
-      font-size: 32px;
-      margin-bottom: 20px;
-      color: #14532d;
-    }
-
-    section.content p {
-      font-size: 18px;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
-    .newsletter {
-      padding: 40px;
-      background-color: #d9f7e0;
-      text-align: center;
-    }
-
-    .newsletter h2 {
+    section h2 {
+      font-size: 24px;
       margin-bottom: 10px;
     }
 
-    .newsletter input[type='email'] {
-      padding: 10px;
-      border-radius: 20px;
-      border: 1px solid #ccc;
-      margin-right: 10px;
-      width: 250px;
-    }
-
-    .newsletter button {
-      padding: 10px 20px;
-      border-radius: 20px;
-      border: none;
-      background-color: #198754;
-      color: white;
-      cursor: pointer;
+    section p {
+      margin-top: 10px;
+      font-size: 16px;
     }
 
     .comment-section {
@@ -140,23 +135,25 @@
 <body>
   <header>
     <img src="logo.png" alt="Decode Biotech Logo" class="logo" />
-    <div class="site-name">Decode Biotech</div>
+    <div class="site-name"><a href="index.html" style="text-decoration: none; color: #0f5132;">Decode Biotech</a></div>
   </header>
 
-  <section class="content">
-    <h1><i class="fas fa-newspaper"></i> Biotech News</h1>
-    <p>
-      Stay updated with the latest in biotechnology from around the world. Curated with insights and clarity.
-    </p>
-  </section>
-
-  <div class="newsletter">
-    <h2>Subscribe to Our Newsletter</h2>
-    <form>
-      <input type="email" placeholder="Your email" required />
-      <button type="submit">Subscribe</button>
-    </form>
+  <div class="back-home">
+    <a href="index.html">← Back to Home</a>
   </div>
+
+  <div class="description">
+    Stay updated with the latest in biotechnology from around the world.
+    Curated with insights and clarity.
+  </div>
+
+  <!-- Example section for future article -->
+  <!--
+  <section>
+    <h2><a href="your-article.html">CRISPR Explained Simply</a></h2>
+    <p>A beginner-friendly explanation of how CRISPR works in gene editing.</p>
+  </section>
+  -->
 
   <div class="comment-section">
     <h2>Leave a Comment</h2>
