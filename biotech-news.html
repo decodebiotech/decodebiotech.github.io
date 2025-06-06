@@ -1,0 +1,160 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biotech News - Decode Biotech</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://www.transparenttextures.com/patterns/molecules.png');
+      background-color: #e6f5ea;
+      color: #1a3d2c;
+      animation: fadeIn 1s ease-in;
+    }@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background-color: #b3e6cc;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+  height: 60px;
+}
+
+.site-name {
+  font-size: 28px;
+  font-weight: bold;
+  color: #0f5132;
+}
+
+.section-header {
+  text-align: center;
+  margin: 40px 0 20px;
+}
+
+.section-header h1 {
+  font-size: 32px;
+  color: #14532d;
+}
+
+.article-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+}
+
+.article-card {
+  background: #ffffff;
+  border-left: 6px solid #198754;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+}
+
+.article-card h2 {
+  margin: 0;
+  color: #14532d;
+}
+
+.article-card p {
+  color: #333;
+}
+
+.newsletter, .comment-section {
+  padding: 40px;
+  background-color: #d9f7e0;
+}
+
+.newsletter h2, .comment-section h2 {
+  font-size: 24px;
+  color: #14532d;
+}
+
+.newsletter form, .comment-section form {
+  margin-top: 10px;
+}
+
+.newsletter input, .comment-section input, .comment-section textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.newsletter button, .comment-section button {
+  padding: 10px 20px;
+  background-color: #198754;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.newsletter button:hover, .comment-section button:hover {
+  background-color: #14532d;
+}
+
+.socials {
+  text-align: center;
+  padding: 30px;
+}
+
+.socials a {
+  margin: 0 10px;
+  font-size: 24px;
+  color: #1c4532;
+  transition: transform 0.3s;
+}
+
+.socials a:hover {
+  transform: scale(1.2);
+  color: #198754;
+}
+
+  </style>
+</head><body>
+  <header>
+    <img src="logo.png" alt="Decode Biotech Logo" class="logo">
+    <div class="site-name">Decode Biotech</div>
+  </header>  <div class="section-header">
+    <h1>Biotech News</h1>
+    <p>Explore the latest advancements, discoveries, and trends in biotechnology.</p>
+  </div>  <div class="article-list">
+    <!-- Article blocks will be added here as new HTML files are created -->
+  </div>  <div class="newsletter">
+    <h2>Subscribe to Our Newsletter</h2>
+    <form>
+      <input type="email" placeholder="Your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>  <div class="comment-section">
+    <h2>Leave a Comment</h2>
+    <form>
+      <input type="text" placeholder="Name" required><br>
+      <textarea placeholder="Your comment" required></textarea><br>
+      <button type="submit">Post Comment</button>
+    </form>
+  </div>  <div class="socials">
+    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+  </div>
+</body></html>
