@@ -35,7 +35,7 @@
     }
 
     .site-name {
-      font-size: 28px;
+      font-size: 34px;
       font-weight: bold;
       color: #0f5132;
     }
@@ -49,6 +49,15 @@
     section {
       padding: 40px;
       border-bottom: 1px solid #cfe6d4;
+      background-color: #f2fff6;
+      margin: 0 10px 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    section h2 a {
+      text-decoration: none;
+      color: #14532d;
     }
 
     section h2 {
@@ -56,7 +65,7 @@
       align-items: center;
       gap: 10px;
       font-size: 24px;
-      color: #14532d;
+      margin-bottom: 10px;
     }
 
     section p {
@@ -64,21 +73,81 @@
       font-size: 16px;
     }
 
+    .newsletter {
+      padding: 40px;
+      background-color: #d9f7e0;
+      text-align: center;
+    }
+
+    .newsletter h2 {
+      margin-bottom: 10px;
+    }
+
+    .newsletter input[type="email"] {
+      padding: 10px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      margin-right: 10px;
+      width: 250px;
+    }
+
+    .newsletter button {
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: none;
+      background-color: #198754;
+      color: white;
+      cursor: pointer;
+    }
+
     .newsletter-popup {
       display: none;
       position: fixed;
-      bottom: 20px;
-      right: 20px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       background: white;
-      border: 2px solid #198754;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      border: 3px solid #198754;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      border-radius: 20px;
       z-index: 1000;
+      max-width: 90%;
+      text-align: center;
     }
 
-    .comment-section, .newsletter {
+    .newsletter-popup button.close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .comment-section {
       padding: 40px;
-      background-color: #d9f7e0;
+      background-color: #f0fff7;
+      text-align: center;
+    }
+
+    .comment-section input,
+    .comment-section textarea {
+      width: 80%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .comment-section button {
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      background-color: #198754;
+      color: white;
+      cursor: pointer;
     }
 
     .socials {
@@ -97,14 +166,6 @@
       transform: scale(1.2);
       color: #198754;
     }
-
-    footer {
-      background-color: #b3e6cc;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: #0f5132;
-    }
   </style>
 </head>
 
@@ -119,27 +180,27 @@
   </div>
 
   <section>
-    <h2><i class="fas fa-newspaper"></i> Biotech News</h2>
+    <h2><a href="biotech-news.html"><i class="fas fa-newspaper"></i> Biotech News</a></h2>
     <p>Stay updated with the latest in biotechnology from around the world. Curated with insights and clarity.</p>
   </section>
 
   <section>
-    <h2><i class="fas fa-tools"></i> Using Biotech Equipment</h2>
+    <h2><a href="biotech-equipment.html"><i class="fas fa-tools"></i> Using Biotech Equipment</a></h2>
     <p>Learn how to use essential biotechnology equipment with easy-to-follow guides and tips from real lab work.</p>
   </section>
 
   <section>
-    <h2><i class="fas fa-flask"></i> Experiment How-Tos</h2>
+    <h2><a href="experiment-howtos.html"><i class="fas fa-flask"></i> Experiment How-Tos</a></h2>
     <p>Step-by-step breakdowns of common and advanced biotech experiments with practical observations.</p>
   </section>
 
   <section>
-    <h2><i class="fas fa-scroll"></i> Research Papers Made Simple</h2>
+    <h2><a href="research-papers.html"><i class="fas fa-scroll"></i> Research Papers Made Simple</a></h2>
     <p>Deconstructing complex research into easy language. Perfect for students, enthusiasts, and new researchers.</p>
   </section>
 
   <section>
-    <h2><i class="fas fa-vials"></i> My Lab Work</h2>
+    <h2><a href="lab-work.html"><i class="fas fa-vials"></i> My Lab Work</a></h2>
     <p>Original lab notes, observations, and experiments conducted personally. Transparent and insightful.</p>
   </section>
 
@@ -152,7 +213,9 @@
   </div>
 
   <div class="newsletter-popup" id="popup">
-    <p>Stay connected! Subscribe to our biotech newsletter for updates.</p>
+    <button class="close" onclick="this.parentElement.style.display='none'">&times;</button>
+    <h3>Stay Connected!</h3>
+    <p>Subscribe to our biotech newsletter for updates.</p>
     <form>
       <input type="email" placeholder="Enter your email" required>
       <button type="submit">Subscribe</button>
@@ -174,12 +237,7 @@
     <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
   </div>
 
-  <footer>
-    <p>&copy; 2025 Decode Biotech. All rights reserved. | Made with 💡 by DecodeBiotech</p>
-  </footer>
-
   <script>
-    // Show newsletter popup after 10 seconds
     setTimeout(() => {
       document.getElementById('popup').style.display = 'block';
     }, 10000);
