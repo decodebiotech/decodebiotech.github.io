@@ -45,6 +45,7 @@
       font-size: 34px;
       font-weight: bold;
       color: #0f5132;
+      padding-left: 10px;
     }
 
     .description {
@@ -54,29 +55,39 @@
     }
 
     section {
-      padding: 40px;
-      border-bottom: 1px solid #cfe6d4;
-      background-color: #f2fff6;
+      padding: 0; /* remove padding here, padding goes to link */
       margin: 0 10px 20px;
       border-radius: 15px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      background-color: transparent; /* keep transparent so no double bg */
     }
 
-    section h2 a {
-      text-decoration: none;
+    .section-link {
+      display: block;
+      padding: 40px;
+      background-color: #f2fff6;
+      border-radius: 15px;
       color: #14532d;
+      text-decoration: none;
+      transition: background-color 0.3s, box-shadow 0.3s;
     }
 
-    section h2 {
+    .section-link:hover {
+      background-color: #d9f7e0;
+      box-shadow: 0 0 15px rgba(25, 135, 84, 0.5);
+      color: #0f5132;
+    }
+
+    .section-link h2 {
+      margin: 0 0 10px 0;
+      font-size: 24px;
       display: flex;
       align-items: center;
       gap: 10px;
-      font-size: 24px;
-      margin-bottom: 10px;
     }
 
-    section p {
-      margin-top: 10px;
+    .section-link p {
+      margin: 0;
       font-size: 16px;
     }
 
@@ -84,6 +95,9 @@
       padding: 40px;
       background-color: #d9f7e0;
       text-align: center;
+      border-radius: 15px;
+      margin: 0 10px 40px;
+      box-shadow: 0 0 10px rgba(25, 135, 84, 0.3);
     }
 
     .newsletter h2 {
@@ -105,12 +119,20 @@
       background-color: #198754;
       color: white;
       cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .newsletter button:hover {
+      background-color: #146c43;
     }
 
     .comment-section {
       padding: 40px;
       background-color: #f0fff7;
       text-align: center;
+      border-radius: 15px;
+      margin: 0 10px 40px;
+      box-shadow: 0 0 10px rgba(25, 135, 84, 0.2);
     }
 
     .comment-section input,
@@ -120,6 +142,8 @@
       margin-bottom: 10px;
       border-radius: 10px;
       border: 1px solid #ccc;
+      font-family: inherit;
+      font-size: 16px;
     }
 
     .comment-section button {
@@ -129,11 +153,17 @@
       background-color: #198754;
       color: white;
       cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .comment-section button:hover {
+      background-color: #146c43;
     }
 
     .socials {
       text-align: center;
       padding: 30px;
+      margin-bottom: 20px;
     }
 
     .socials a {
@@ -147,6 +177,16 @@
       transform: scale(1.2);
       color: #198754;
     }
+
+    .privacy-policy-link {
+      text-decoration: none;
+      color: #1a3d2c;
+      font-size: 16px;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 20px;
+    }
+
   </style>
 </head>
 
@@ -157,57 +197,57 @@
   </header>
 
   <div class="description">
-    Decoding complex biotech knowledge, sharing real lab work, and simplifying research for learners and professionals alike.
+    Decoding complex biotech knowledge, sharing real lab work, and simplifying research for learners and
+    professionals alike.
   </div>
 
   <section>
-    <h2>
-      <a href="biotech-news.html"><i class="fas fa-newspaper"></i> Biotech News</a>
-    </h2>
-    <p>
-      Stay updated with the latest in biotechnology from around the world.
-      Curated with insights and clarity.
-    </p>
+    <a href="biotech-news.html" class="section-link">
+      <h2><i class="fas fa-newspaper"></i> Biotech News</h2>
+      <p>
+        Stay updated with the latest in biotechnology from around the world. Curated with insights and
+        clarity.
+      </p>
+    </a>
   </section>
 
   <section>
-    <h2>
-      <a href="biotech-equipment.html"><i class="fas fa-tools"></i> Using Biotech Equipment</a>
-    </h2>
-    <p>
-      Learn how to use essential biotechnology equipment with easy-to-follow
-      guides and tips from real lab work.
-    </p>
+    <a href="biotech-equipment.html" class="section-link">
+      <h2><i class="fas fa-tools"></i> Using Biotech Equipment</h2>
+      <p>
+        Learn how to use essential biotechnology equipment with easy-to-follow guides and tips from real
+        lab work.
+      </p>
+    </a>
   </section>
 
   <section>
-    <h2>
-      <a href="how-to-do-experiment.html"><i class="fas fa-flask"></i> Experiment How-Tos</a>
-    </h2>
-    <p>
-      Step-by-step breakdowns of common and advanced biotech experiments with
-      practical observations.
-    </p>
+    <a href="how-to-do-experiment.html" class="section-link">
+      <h2><i class="fas fa-flask"></i> Experiment How-Tos</h2>
+      <p>
+        Step-by-step breakdowns of common and advanced biotech experiments with practical observations.
+      </p>
+    </a>
   </section>
 
   <section>
-    <h2>
-      <a href="research-papers-simplified.html"><i class="fas fa-scroll"></i> Research Papers Made Simple</a>
-    </h2>
-    <p>
-      Deconstructing complex research into easy language. Perfect for students,
-      enthusiasts, and new researchers.
-    </p>
+    <a href="research-papers-simplified.html" class="section-link">
+      <h2><i class="fas fa-scroll"></i> Research Papers Made Simple</h2>
+      <p>
+        Deconstructing complex research into easy language. Perfect for students, enthusiasts, and new
+        researchers.
+      </p>
+    </a>
   </section>
 
   <section>
-    <h2>
-      <a href="my-lab-work.html"><i class="fas fa-vials"></i> My Lab Work</a>
-    </h2>
-    <p>
-      Original lab notes, observations, and experiments conducted personally.
-      Transparent and insightful.
-    </p>
+    <a href="my-lab-work.html" class="section-link">
+      <h2><i class="fas fa-vials"></i> My Lab Work</h2>
+      <p>
+        Original lab notes, observations, and experiments conducted personally. Transparent and
+        insightful.
+      </p>
+    </a>
   </section>
 
   <div class="newsletter">
@@ -227,15 +267,13 @@
     </form>
   </div>
 
- <div class="socials">
-  <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-  <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-  <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-  <br><br>
-  <a href="privacy-policy.html" style="text-decoration: none; color: #1a3d2c; font-size: 16px; font-weight: bold;">
-    Privacy Policy
-  </a>
- </div>
+  <div class="socials">
+    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+    <br /><br />
+    <a href="privacy-policy.html" class="privacy-policy-link">Privacy Policy</a>
+  </div>
 </body>
 
 </html>
