@@ -1,8 +1,14 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Research Papers Simplified | Decode Biotech</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Research Papers Made Simple - Decode Biotech</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
   <style>
     body {
       margin: 0;
@@ -10,123 +16,183 @@
       background: url('https://www.transparenttextures.com/patterns/molecules.png');
       background-color: #e6f5ea;
       color: #1a3d2c;
-      animation: fadeIn 1s ease-in;
-    }@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+      animation: fadeIn 2s ease-in;
+    }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  background-color: #b3e6cc;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
 
-.logo {
-  height: 60px;
-}
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      background-color: #b3e6cc;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
 
-.site-name {
-  font-size: 28px;
-  font-weight: bold;
-  color: #0f5132;
-}
+    .logo {
+      height: 60px;
+    }
 
-main {
-  padding: 40px;
-}
+    .site-name {
+      font-size: 34px;
+      font-weight: bold;
+      color: #0f5132;
+    }
 
-h1 {
-  font-size: 30px;
-  color: #14532d;
-}
+    nav.breadcrumb {
+      margin: 20px 10px;
+      font-size: 14px;
+      color: #0f5132;
+    }
 
-p {
-  font-size: 18px;
-  margin-top: 10px;
-}
+    nav.breadcrumb a {
+      color: #14532d;
+      text-decoration: none;
+      font-weight: 600;
+    }
 
-.newsletter, .comment-section, .socials {
-  padding: 40px;
-  background-color: #d9f7e0;
-}
+    nav.breadcrumb a:hover {
+      text-decoration: underline;
+    }
 
-.newsletter h2, .comment-section h2 {
-  font-size: 22px;
-  margin-bottom: 10px;
-}
+    section.content {
+      padding: 40px;
+      background-color: #f2fff6;
+      margin: 0 10px 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
 
-.newsletter form, .comment-section form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+    section.content h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #14532d;
+    }
 
-.newsletter input, .comment-section input, .comment-section textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
+    section.content p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
 
-.newsletter button, .comment-section button {
-  padding: 10px;
-  border: none;
-  background-color: #198754;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
+    .newsletter {
+      padding: 40px;
+      background-color: #d9f7e0;
+      text-align: center;
+    }
 
-.newsletter button:hover, .comment-section button:hover {
-  background-color: #14532d;
-}
+    .newsletter h2 {
+      margin-bottom: 10px;
+    }
 
-.socials {
-  text-align: center;
-}
+    .newsletter input[type='email'] {
+      padding: 10px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      margin-right: 10px;
+      width: 250px;
+    }
 
-.socials a {
-  margin: 0 10px;
-  font-size: 24px;
-  color: #1c4532;
-  transition: transform 0.3s;
-}
+    .newsletter button {
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: none;
+      background-color: #198754;
+      color: white;
+      cursor: pointer;
+    }
 
-.socials a:hover {
-  transform: scale(1.2);
-  color: #198754;
-}
+    .comment-section {
+      padding: 40px;
+      background-color: #f0fff7;
+      text-align: center;
+    }
 
+    .comment-section input,
+    .comment-section textarea {
+      width: 80%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .comment-section button {
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: none;
+      background-color: #198754;
+      color: white;
+      cursor: pointer;
+    }
+
+    .socials {
+      text-align: center;
+      padding: 30px;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      font-size: 24px;
+      color: #1c4532;
+      transition: transform 0.3s;
+    }
+
+    .socials a:hover {
+      transform: scale(1.2);
+      color: #198754;
+    }
   </style>
-</head><body>
+</head>
+
+<body>
   <header>
     <img src="logo.png" alt="Decode Biotech Logo" class="logo" />
     <div class="site-name">Decode Biotech</div>
-  </header>  <main>
-    <h1><i class="fas fa-scroll"></i> Research Papers Simplified</h1>
+  </header>
+
+  <nav class="breadcrumb">
+    <a href="index.html">Home</a> &gt; Research Papers Made Simple
+  </nav>
+
+  <section class="content">
+    <h1><i class="fas fa-scroll"></i> Research Papers Made Simple</h1>
     <p>
-      Welcome to a section dedicated to making scientific literature accessible to everyone. Here, we break down complex biotech research papers into easy-to-understand summaries, annotated reviews, and key takeaways.
+      Simplifying complex research papers so you can focus on understanding the core ideas quickly.
+      Perfect for students, enthusiasts, and new researchers.
     </p>
-  </main>  <div class="newsletter">
+  </section>
+
+  <div class="newsletter">
     <h2>Subscribe to Our Newsletter</h2>
     <form>
       <input type="email" placeholder="Your email" required />
       <button type="submit">Subscribe</button>
     </form>
-  </div>  <div class="comment-section">
+  </div>
+
+  <div class="comment-section">
     <h2>Leave a Comment</h2>
     <form>
-      <input type="text" placeholder="Name" required />
-      <textarea placeholder="Your comment" required></textarea>
+      <input type="text" placeholder="Name" required /><br />
+      <textarea placeholder="Your comment" required></textarea><br />
       <button type="submit">Post Comment</button>
     </form>
-  </div>  <div class="socials">
+  </div>
+
+  <div class="socials">
     <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
     <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
     <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
   </div>
-</body></html>
+</body>
+
+</html>
