@@ -22,44 +22,50 @@
 
     .description {
       text-align: center;
-      margin: 30px;
+      margin: 30px 20px;
       font-size: 18px;
+      line-height: 1.6;
+      color: #0d3b28;
     }
 
     section {
-      margin: 0 10px 20px;
-      border-radius: 15px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-      background-color: transparent;
+      margin: 20px;
+      border-radius: 16px;
+      transition: transform 0.3s ease;
     }
 
     .section-link {
       display: block;
-      padding: 40px;
-      background-color: #f2fff6;
-      border-radius: 15px;
-      color: #14532d;
+      padding: 35px;
+      background: linear-gradient(145deg, #ffffff, #d5f2df);
+      border-radius: 16px;
+      color: #124734;
       text-decoration: none;
-      transition: background-color 0.3s, box-shadow 0.3s;
+      box-shadow: 0 8px 20px rgba(0, 64, 34, 0.1);
+      transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
     }
 
     .section-link:hover {
-      background-color: #d9f7e0;
-      box-shadow: 0 0 15px rgba(25, 135, 84, 0.5);
-      color: #0f5132;
+      background: linear-gradient(145deg, #d9f7e0, #bce8cb);
+      box-shadow: 0 12px 25px rgba(0, 64, 34, 0.2);
+      transform: translateY(-4px);
+      color: #0a3324;
     }
 
     .section-link h2 {
-      margin: 0 0 10px 0;
+      margin: 0 0 10px;
       font-size: 24px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
+      color: #10402d;
     }
 
     .section-link p {
       margin: 0;
       font-size: 16px;
+      color: #16503a;
+      line-height: 1.5;
     }
   </style>
 </head>
