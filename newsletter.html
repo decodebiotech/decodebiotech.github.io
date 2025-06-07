@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Newsletter Subscription - Decode Biotech</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #e6f5ea;
+      color: #1a3d2c;
+      padding: 20px;
+    }
+
+    form {
+      max-width: 400px;
+      background-color: #f2fff6;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #14532d;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    input[type="email"] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1.5px solid #b3e6cc;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-bottom: 18px;
+      box-sizing: border-box;
+    }
+
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      font-size: 14px;
+      color: #14532d;
+      user-select: none;
+    }
+
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px 0;
+      background-color: #198754;
+      border: none;
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      opacity: 0.7;
+    }
+
+    button:enabled {
+      opacity: 1;
+    }
+
+    button:hover:enabled {
+      background-color: #14532d;
+    }
+
+    .thankyou-message {
+      text-align: center;
+      color: #198754;
+      font-weight: 700;
+      font-size: 20px;
+      margin-top: 20px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="newsletterForm" action="https://usebasin.com/f/a1f34fd90151" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+    <h2>Subscribe to Our Newsletter</h2>
+
+    <label for="email">Email Address</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="Your email"
+      required
+      autocomplete="email"
+    />
+
+    <label class="checkbox-container">
+      <input type="checkbox" id="privacyCheck" />
+      I agree to the <a href="privacy-policy.html" target="_blank">Privacy Policy</a>
+    </label>
+
+    <button type="submit" id="submitBtn" disabled>Subscribe</button>
+
+    <div class="thankyou-message" id="thankyouMessage">
+      Thank you for subscribing!
+    </div>
+  </form>
+
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+  <script>
+    const privacyCheck = document.getElementById('privacyCheck');
+    const submitBtn = document.getElementById('submitBtn');
+    const thankyouMessage = document.getElementById('thankyouMessage');
+    const form = document.getElementById('newsletterForm');
+    let submitted = false;
+
+    // Enable submit only if privacy checked
+    privacyCheck.addEventListener('change', () => {
+      submitBtn.disabled = !privacyCheck.checked;
+    });
+
+    // On successful form submission to Basin, iframe loads, show thank you
+    document.getElementById('hidden_iframe').addEventListener('load', () => {
+      if (submitted) {
+        form.style.display = 'none';
+        thankyouMessage.style.display = 'block';
+        submitted = false;
+      }
+    });
+  </script>
+</body>
+  </html>
