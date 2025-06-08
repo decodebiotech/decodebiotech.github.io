@@ -17,27 +17,47 @@
       justify-content: space-between;
       padding: 20px 40px;
       background-color: #b3e6cc;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 25px;
+      box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.1),
+        0 8px 20px rgba(0, 0, 0, 0.15),
+        inset 0 -1px 1px rgba(255, 255, 255, 0.2);
+      margin: 20px;
     }
 
     a {
       text-decoration: none;
+      display: flex;
+      align-items: center;
     }
 
     .logo {
       height: 60px;
       margin-right: 20px;
+      border-radius: 50%;
+      padding: 5px;
+      background: radial-gradient(circle at 30% 30%, #ffffffcc, #b3e6cc);
+      backdrop-filter: blur(6px);
+      box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.2),
+        inset 0 2px 4px rgba(255, 255, 255, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: transform 0.3s ease;
     }
 
-    .animated-title .line {
-      display: flex;
-      gap: 2px;
+    .logo:hover {
+      transform: scale(1.05) rotateX(5deg) rotateY(5deg);
     }
 
     .animated-title {
       display: flex;
       flex-direction: column;
       line-height: 1.2;
+    }
+
+    .animated-title .line {
+      display: flex;
+      gap: 2px;
     }
 
     .animated-title span {
@@ -78,7 +98,7 @@
 </head>
 <body>
   <header>
-    <a href="index.html" style="display: flex; align-items: center;">
+    <a href="index.html">
       <img src="logo.png" alt="Decode Biotech Logo" class="logo" />
       <div class="animated-title">
         <div class="line">
