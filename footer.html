@@ -5,21 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Decode Biotech Footer</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #e6f5ea;
       margin: 0;
       padding: 60px 20px;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e6f5ea;
+      color: #1a3d2c;
       display: flex;
       flex-direction: column;
       align-items: center;
-      color: #1a3d2c;
+      justify-content: center;
+    }
+
+    .footer-container {
+      width: 100%;
+      max-width: 700px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
     }
 
     .bubbles-container {
       display: flex;
-      gap: 30px;
-      margin-bottom: 30px;
+      gap: 20px;
+      justify-content: center;
     }
 
     .bubble {
@@ -44,12 +58,12 @@
     .social-icons {
       display: flex;
       gap: 25px;
-      margin-bottom: 40px;
+      justify-content: center;
     }
 
     .social-icons a {
-      width: 40px;
-      height: 40px;
+      width: 45px;
+      height: 45px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -72,19 +86,19 @@
     }
 
     .footer-box {
-      max-width: 600px;
-      padding: 30px;
-      margin-top: 20px;
+      width: 100%;
+      padding: 25px;
       border-radius: 20px;
       background: linear-gradient(145deg, #ffffff, #cbe6d2);
       box-shadow: 10px 10px 20px #c0d6ca, -10px -10px 20px #ffffff;
       text-align: center;
       font-size: 14px;
+      line-height: 1.6;
     }
 
     .footer-box a {
       color: #14532d;
-      margin: 0 10px;
+      margin: 0 8px;
       text-decoration: none;
       font-weight: 600;
       transition: color 0.3s ease;
@@ -95,43 +109,53 @@
       text-decoration: underline;
     }
 
-    h2 {
-      margin-bottom: 20px;
+    @media (max-width: 500px) {
+      .bubbles-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="bubbles-container">
-    <div class="bubble" onclick="window.location.href='newsletter.html'">Newsletter</div>
-    <div class="bubble" onclick="window.location.href='comment-section.html'">Comments</div>
+  <div class="footer-container">
+
+    <!-- Bubbles -->
+    <div class="bubbles-container">
+      <div class="bubble" onclick="window.location.href='newsletter.html'">Newsletter</div>
+      <div class="bubble" onclick="window.location.href='comment-section.html'">Comments</div>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="social-icons">
+      <!-- Twitter -->
+      <a href="https://twitter.com/moni_titans" target="_blank" aria-label="Twitter">
+        <svg viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.59-2.46.7a4.2 4.2 0 0 0 1.84-2.32 8.27 8.27 0 0 1-2.64 1.02 4.13 4.13 0 0 0-7.1 3.76A11.72 11.72 0 0 1 3.16 4.9a4.12 4.12 0 0 0 1.28 5.51A4.07 4.07 0 0 1 2.8 9v.05a4.14 4.14 0 0 0 3.31 4.05 4.1 4.1 0 0 1-1.85.07 4.13 4.13 0 0 0 3.85 2.86A8.31 8.31 0 0 1 2 19.54 11.72 11.72 0 0 0 8.29 21c7.55 0 11.68-6.26 11.68-11.68 0-.18-.01-.36-.02-.54A8.36 8.36 0 0 0 22.46 6z"/></svg>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/moni-shankar-das-48b0b2367" target="_blank" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.7v2.2h.05c.51-.96 1.75-2 3.6-2 3.85 0 4.55 2.53 4.55 5.82V24h-4v-7.1c0-1.7-.03-3.9-2.4-3.9-2.4 0-2.77 1.87-2.77 3.8V24h-4V8z"/></svg>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/moni_titans" target="_blank" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5A3.75 3.75 0 0020 16.25v-8.5A3.75 3.75 0 0016.25 4h-8.5zm8.75 1.25a.75.75 0 110 1.5.75.75 0 010-1.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z"/></svg>
+      </a>
+    </div>
+
+    <!-- Footer Info -->
+    <div class="footer-box">
+      <a href="about.html" target="_blank">About Us</a> |
+      <a href="privacy-policy.html" target="_blank">Privacy Policy</a> |
+      <a href="contact-us.html" target="_blank">Contact Us</a>
+      <br /><br />
+      © 2025 Decode Biotech. All rights reserved.<br />
+      Developed by Team Decode Biotech
+    </div>
+
   </div>
-
-  <div class="social-icons">
-    <!-- Twitter -->
-    <a href="https://twitter.com/moni_titans" target="_blank" aria-label="Twitter">
-      <svg viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.59-2.46.7a4.2 4.2 0 0 0 1.84-2.32 8.27 8.27 0 0 1-2.64 1.02 4.13 4.13 0 0 0-7.1 3.76A11.72 11.72 0 0 1 3.16 4.9a4.12 4.12 0 0 0 1.28 5.51A4.07 4.07 0 0 1 2.8 9v.05a4.14 4.14 0 0 0 3.31 4.05 4.1 4.1 0 0 1-1.85.07 4.13 4.13 0 0 0 3.85 2.86A8.31 8.31 0 0 1 2 19.54 11.72 11.72 0 0 0 8.29 21c7.55 0 11.68-6.26 11.68-11.68 0-.18-.01-.36-.02-.54A8.36 8.36 0 0 0 22.46 6z"/></svg>
-    </a>
-
-    <!-- LinkedIn -->
-    <a href="https://www.linkedin.com/in/moni-shankar-das-48b0b2367" target="_blank" aria-label="LinkedIn">
-      <svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.7v2.2h.05c.51-.96 1.75-2 3.6-2 3.85 0 4.55 2.53 4.55 5.82V24h-4v-7.1c0-1.7-.03-3.9-2.4-3.9-2.4 0-2.77 1.87-2.77 3.8V24h-4V8z"/></svg>
-    </a>
-
-    <!-- Instagram -->
-    <a href="https://www.instagram.com/moni_titans" target="_blank" aria-label="Instagram">
-      <svg viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5A3.75 3.75 0 0020 16.25v-8.5A3.75 3.75 0 0016.25 4h-8.5zm8.75 1.25a.75.75 0 110 1.5.75.75 0 010-1.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z"/></svg>
-    </a>
-  </div>
-
-  <div class="footer-box">
-    <a href="about.html" target="_blank">About Us</a> |
-    <a href="privacy-policy.html" target="_blank">Privacy Policy</a> |
-    <a href="contact-us.html" target="_blank">Contact Us</a>
-    <br /><br />
-    © 2025 Decode Biotech. All rights reserved.<br />
-    Developed by Team Decode Biotech
-  </div>
-
 </body>
 </html>
