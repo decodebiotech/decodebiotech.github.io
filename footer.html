@@ -3,192 +3,99 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Decode Biotech - Footer Example</title>
+  <title>Decode Biotech - Community</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #e6f5ea;
       color: #1a3d2c;
       margin: 0;
-      padding: 0;
+      padding: 40px 20px;
       display: flex;
       flex-direction: column;
+      align-items: center;
       min-height: 100vh;
+      box-sizing: border-box;
     }
-    .content {
-      flex: 1;
+
+    h1 {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .bubbles-container {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 60px;
+    }
+
+    .bubble {
+      background-color: #f2fff6;
+      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+      font-weight: 600;
+      color: #14532d;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
       padding: 20px;
     }
-    footer {
-      background-color: #f2fff6;
-      border-top: 2px solid #14532d;
-      padding: 30px 20px;
-      max-width: 700px;
-      margin: 0 auto;
-      border-radius: 12px 12px 0 0;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-    }
-    .footer-section {
-      display: flex;
-      gap: 25px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .footer-section > div {
-      flex: 1 1 300px;
-      min-width: 280px;
-      background: #eaf9e7;
-      border-radius: 8px;
-      padding: 15px 20px;
-      box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
-    }
-    /* Newsletter & Comments container styling */
-    #newsletter-section, #comment-section {
-      min-height: 120px;
-      font-size: 14px;
-      color: #14532d;
-      overflow-y: auto;
-    }
-    /* Social media icons and links */
-    .social-links {
-      display: flex;
-      gap: 18px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .social-links a {
-      display: inline-block;
-      width: 36px;
-      height: 36px;
-      color: #14532d;
-      transition: color 0.3s ease;
-    }
-    .social-links a:hover {
-      color: #198754;
-    }
-    .social-links svg {
-      width: 100%;
-      height: 100%;
-      fill: currentColor;
-    }
-    .links-row {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .links-row a {
-      color: #14532d;
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 15px;
-      border: 2px solid #14532d;
-      padding: 8px 14px;
-      border-radius: 8px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    .links-row a:hover {
+
+    .bubble:hover {
       background-color: #14532d;
       color: #fff;
     }
-    /* Copyright line */
-    .footer-bottom {
+
+    .footer {
+      text-align: center;
       font-size: 14px;
       color: #3b3b3b;
-      text-align: center;
-      margin-top: 15px;
-      border-top: 1px solid #ccc;
-      padding-top: 12px;
+      margin-top: auto;
+    }
+
+    .footer a {
+      color: #14532d;
+      font-weight: 600;
+      text-decoration: none;
+      margin: 0 8px;
+      transition: color 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: #198754;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <div class="content">
-    <!-- Your main page content goes here -->
+  <h1>Join Our Community</h1>
+
+  <div class="bubbles-container">
+    <div class="bubble" onclick="window.location.href='newsletter.html'">
+      Newsletter
+    </div>
+    <div class="bubble" onclick="window.location.href='comment-section.html'">
+      Comment Section
+    </div>
   </div>
 
-  <footer>
-    <div class="footer-section">
+  <div class="footer">
+    <a href="about.html" target="_blank">About Us</a> |
+    <a href="privacy-policy.html" target="_blank">Privacy Policy</a> |
+    <a href="contact-us.html" target="_blank">Contact Us</a>
+    <br /><br />
+    © 2025 Decode Biotech. All rights reserved.<br />
+    Developed by Team Decode Biotech
+  </div>
 
-      <!-- Newsletter -->
-      <div>
-        <h3>Join Our Newsletter</h3>
-        <div id="newsletter-section">Loading newsletter...</div>
-      </div>
-
-      <!-- Comments -->
-      <div>
-        <h3>Community Comments</h3>
-        <div id="comment-section">Loading comments...</div>
-      </div>
-    </div>
-
-    <!-- Social Media Links -->
-    <div class="social-links" aria-label="Social media links">
-      <a href="https://twitter.com/moni_titans" target="_blank" aria-label="Twitter">
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M22.46 6c-.77.35-1.6.59-2.46.7a4.2 4.2 0 0 0 1.84-2.32 8.27 8.27 0 0 1-2.64 1.02 4.13 4.13 0 0 0-7.1 3.76A11.72 11.72 0 0 1 3.16 4.9a4.12 4.12 0 0 0 1.28 5.51A4.07 4.07 0 0 1 2.8 9v.05a4.14 4.14 0 0 0 3.31 4.05 4.1 4.1 0 0 1-1.85.07 4.13 4.13 0 0 0 3.85 2.86A8.31 8.31 0 0 1 2 19.54 11.72 11.72 0 0 0 8.29 21c7.55 0 11.68-6.26 11.68-11.68 0-.18-.01-.36-.02-.54A8.36 8.36 0 0 0 22.46 6z"/>
-        </svg>
-      </a>
-      <a href="https://www.linkedin.com/in/moni-shankar-das-48b0b2367" target="_blank" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.7v2.2h.05c.51-.96 1.75-2 3.6-2 3.85 0 4.55 2.53 4.55 5.82V24h-4v-7.1c0-1.7-.03-3.9-2.4-3.9-2.4 0-2.77 1.87-2.77 3.8V24h-4V8z"/>
-        </svg>
-      </a>
-      <a href="https://www.instagram.com/moni_titans" target="_blank" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 2A3.75 3.75 0 004 7.75v8.5A3.75 3.75 0 007.75 20h8.5A3.75 3.75 0 0020 16.25v-8.5A3.75 3.75 0 0016.25 4h-8.5zm8.75 1.25a.75.75 0 110 1.5.75.75 0 010-1.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z"/>
-        </svg>
-      </a>
-    </div>
-
-    <!-- Footer Links -->
-    <div class="links-row" role="navigation" aria-label="Footer site links">
-      <a href="about.html" target="_blank" rel="noopener noreferrer">About Us</a>
-      <a href="privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-      <a href="contact-us.html" target="_blank" rel="noopener noreferrer">Contact Us</a>
-    </div>
-
-    <!-- Copyright -->
-    <div class="footer-bottom">
-      © 2025 Decode Biotech. All rights reserved.<br />
-      Developed by Team Decode Biotech
-    </div>
-  </footer>
-
-  <script>
-    const newsletterSection = document.getElementById("newsletter-section");
-    const commentSection = document.getElementById("comment-section");
-
-    fetch("newsletter.html")
-      .then(res => {
-        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-        return res.text();
-      })
-      .then(data => {
-        newsletterSection.innerHTML = data;
-      })
-      .catch(err => {
-        newsletterSection.textContent = "Failed to load newsletter: " + err.message;
-        console.error("Newsletter load error:", err);
-      });
-
-    fetch("comment-section.html")
-      .then(res => {
-        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-        return res.text();
-      })
-      .then(data => {
-        commentSection.innerHTML = data;
-      })
-      .catch(err => {
-        commentSection.textContent = "Failed to load comments: " + err.message;
-        console.error("Comment section load error:", err);
-      });
-  </script>
 </body>
 </html>
