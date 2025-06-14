@@ -5,15 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Header Preview - Decode Biotech</title>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5NBDR8Y0TM"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-5NBDR8Y0TM');
-  </script>
-
   <style>
     body {
       margin: 0;
@@ -105,6 +96,27 @@
       }
     }
   </style>
+
+  <!-- Conditional Google Analytics Loader -->
+  <script>
+    const userConsent = localStorage.getItem('cookieConsent');
+    if (userConsent === 'accepted') {
+      loadAnalytics();
+    }
+
+    function loadAnalytics() {
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-5NBDR8Y0TM";
+      document.head.appendChild(script);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'G-5NBDR8Y0TM');
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -120,5 +132,42 @@
       </div>
     </a>
   </header>
+
+  <!-- Consent Banner -->
+  <div id="cookie-banner" style="
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: #fff;
+    color: #222;
+    padding: 15px 20px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: none;
+    z-index: 9999;
+    font-family: 'Segoe UI', sans-serif;
+    max-width: 500px;
+    margin: auto;
+  ">
+    <p style="margin: 0 0 10px;">
+      We use cookies for analytics to improve your experience. Do you consent to the use of cookies?
+    </p>
+    <button onclick="handleConsent(true)" style="background: #198754; color: white; padding: 8px 16px; border: none; border-radius: 8px; cursor: pointer;">Accept</button>
+    <button onclick="handleConsent(false)" style="background: #dc3545; color: white; padding: 8px 16px; border: none; border-radius: 8px; margin-left: 10px; cursor: pointer;">Reject</button>
+  </div>
+
+  <script>
+    function handleConsent(accepted) {
+      localStorage.setItem('cookieConsent', accepted ? 'accepted' : 'rejected');
+      document.getElementById('cookie-banner').style.display = 'none';
+      if (accepted) loadAnalytics();
+    }
+
+    if (!localStorage.getItem('cookieConsent')) {
+      document.getElementById('cookie-banner').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
