@@ -3,7 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Header Preview - Decode Biotech</title>
+  <title>Decode Biotech</title>
+
+  <!-- ConsentManager autoblocking script -->
+  <script type="text/javascript" data-cmp-ab="1"
+    src="https://cdn.consentmanager.net/delivery/autoblocking/56b54f4502e9f.js"
+    data-cmp-host="b.delivery.consentmanager.net"
+    data-cmp-cdn="cdn.consentmanager.net"
+    data-cmp-codesrc="16">
+  </script>
 
   <style>
     body {
@@ -96,27 +104,6 @@
       }
     }
   </style>
-
-  <!-- Conditional Google Analytics Loader -->
-  <script>
-    const userConsent = localStorage.getItem('cookieConsent');
-    if (userConsent === 'accepted') {
-      loadAnalytics();
-    }
-
-    function loadAnalytics() {
-      const script = document.createElement('script');
-      script.async = true;
-      script.src = "https://www.googletagmanager.com/gtag/js?id=G-5NBDR8Y0TM";
-      document.head.appendChild(script);
-
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      window.gtag = gtag;
-      gtag('js', new Date());
-      gtag('config', 'G-5NBDR8Y0TM');
-    }
-  </script>
 </head>
 <body>
   <header>
@@ -165,8 +152,23 @@
       if (accepted) loadAnalytics();
     }
 
+    function loadAnalytics() {
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-5NBDR8Y0TM";
+      document.head.appendChild(script);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'G-5NBDR8Y0TM');
+    }
+
     if (!localStorage.getItem('cookieConsent')) {
       document.getElementById('cookie-banner').style.display = 'block';
+    } else if (localStorage.getItem('cookieConsent') === 'accepted') {
+      loadAnalytics();
     }
   </script>
 </body>
