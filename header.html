@@ -143,16 +143,9 @@
   <script>
     function loadAnalytics() {
       const script = document.createElement('script');
-      script.src = "https://www.googletagmanager.com/gtag/js?id=G-5NBDR8Y0TM"; // Replace with your actual GA ID
-      script.async = true;
+      script.src = "gtag.js"; // Load your gtag.js file
+      script.defer = true;
       document.head.appendChild(script);
-
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      window.gtag = gtag;
-
-      gtag('js', new Date());
-      gtag('config', 'G-5NBDR8Y0TM'); // Replace with your actual GA ID
     }
 
     function handleConsent(accepted) {
