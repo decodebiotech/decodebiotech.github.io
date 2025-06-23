@@ -36,8 +36,50 @@
 
     .description {
       text-align: center;
-      margin: 20px 30px 40px;
+      margin: 20px 30px 20px;
       font-size: 18px;
+    }
+
+    /* Circular Bubble Button */
+    .circle-link-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+      animation: bubbleIn 1.2s ease;
+    }
+
+    .circle-bubble-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #e8fcee, #cdebdc);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), inset 5px 5px 10px #d3f2e1, inset -5px -5px 10px #ffffff;
+      font-size: 16px;
+      font-weight: bold;
+      color: #1a3d2c;
+      text-align: center;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .circle-bubble-link:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    @keyframes bubbleIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
 
     section {
@@ -64,16 +106,23 @@
 <body>
   <div id="header"></div>
 
-  <!-- Biotech News Heading -->
+  <!-- Heading -->
   <h1 class="main-heading">🧬 Biotech News</h1>
 
-  <!-- Short Description -->
+  <!-- Description -->
   <div class="description">
     Stay updated with the latest in biotechnology from around the world.<br />
     Curated with insights and clarity.
   </div>
 
-  <!-- Example article section -->
+  <!-- Circular Bubble Link -->
+  <div class="circle-link-wrapper">
+    <a href="top5-biotech-news-june-2025.html" class="circle-bubble-link">
+      TOP 5 BIOTECH NEWS<br>JUNE 2025
+    </a>
+  </div>
+
+  <!-- Example Article -->
   <!--
   <section>
     <h2><a href="your-article.html">CRISPR Explained Simply</a></h2>
@@ -83,6 +132,7 @@
 
   <div id="footer"></div>
 
+  <!-- External HTML Injection -->
   <script>
     fetch('header.html')
       .then(res => res.text())
