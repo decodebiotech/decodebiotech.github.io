@@ -4,17 +4,21 @@
   <meta charset="UTF-8" />
   <title>Decode Biotech</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <style>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BX61KT183P"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-BX61KT183P');
-</script>
+  <!-- ✅ Google tag (gtag.js) – place first inside <head> -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BX61KT183P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BX61KT183P');
+  </script>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Page Styles -->
+  <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -80,13 +84,15 @@
 </head>
 <body>
 
-  <!-- Header placeholder -->
+  <!-- Header (auto-loaded) -->
   <div id="header"></div>
 
+  <!-- Description Text -->
   <div class="description">
     Decoding complex biotech knowledge, sharing real lab work, and simplifying research for learners and professionals alike.
   </div>
 
+  <!-- Sections -->
   <section>
     <a href="biotech-news.html" class="section-link">
       <h2><i class="fas fa-newspaper"></i> Biotech News</h2>
@@ -122,9 +128,10 @@
     </a>
   </section>
 
-  <!-- Footer placeholder -->
+  <!-- Footer (auto-loaded) -->
   <div id="footer"></div>
 
+  <!-- Load Header and Footer via JS -->
   <script>
     // Load header.html
     fetch('header.html')
@@ -136,5 +143,6 @@
       .then(response => response.text())
       .then(data => document.getElementById('footer').innerHTML = data);
   </script>
+
 </body>
 </html>
