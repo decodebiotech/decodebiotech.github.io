@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microscopy: How to Centre and Identify Your Specimen</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Animation styles -->
+    <style>
+        body {
+            background: linear-gradient(180deg, #E6F4EA 0%, #F4FBF6 100%);
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fade-delay-1 { animation-delay: 0.2s; }
+        .fade-delay-2 { animation-delay: 0.4s; }
+        .fade-delay-3 { animation-delay: 0.6s; }
+        .card {
+            background-color: #DDF3E4;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+        }
+        figure img {
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #20603C;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Include header -->
+<div id="header"></div>
+<script>
+    fetch('header.html')
+        .then(res => res.text())
+        .then(data => document.getElementById('header').innerHTML = data);
+</script>
+
+<main class="container" style="max-width:900px; margin:auto; padding:20px;">
+    <h1 class="fade-in">Microscopy: How to Centre and Identify Your Specimen</h1>
+
+    <p class="fade-in fade-delay-1">
+        One of the most common frustrations for beginners in microscopy is losing the specimen in the field of view.
+        Properly centring and identifying your sample is an essential skill that saves time and ensures accurate observation.
+        Here’s a practical guide you can follow in your lab sessions.
+    </p>
+
+    <div class="card fade-in fade-delay-2">
+        <h2>Step-by-Step Guide</h2>
+        <ol>
+            <li><strong>Start with the lowest magnification</strong> – Gives the widest field of view, making it easier to locate your specimen.</li>
+            <li><strong>Locate a landmark</strong> – Use a large or distinctive feature in your sample as a reference point.</li>
+            <li><strong>Understand inverted movement</strong> – The image moves in the opposite direction of the stage.</li>
+            <li><strong>Make small, controlled adjustments</strong> – Use stage control knobs, not your fingers.</li>
+            <li><strong>Re-centre before increasing magnification</strong> – Always centre the specimen before switching objectives.</li>
+        </ol>
+    </div>
+
+    <div class="card fade-in fade-delay-3">
+        <h2>Beginner Tricks</h2>
+        <ul>
+            <li><strong>Dot method:</strong> Draw a tiny dot on the cover slip near your sample for easy relocation.</li>
+            <li><strong>Zig-zag scanning:</strong> Systematically scan to avoid missing areas.</li>
+            <li><strong>Slide orientation:</strong> Keep one corner facing you to maintain reference.</li>
+            <li><strong>Edge method:</strong> If lost, move towards a cover slip edge and return to the sample.</li>
+        </ul>
+    </div>
+
+    <div class="fade-in fade-delay-3" style="text-align:center;">
+        <h2>Image vs Stage Movement</h2>
+        <p>The diagram below shows the inverted relationship between stage movement and image movement.</p>
+        <figure>
+            <img src="microscopy_identification.jpg" alt="Microscope Inverted Movement Diagram" style="max-width:100%; height:auto;">
+            <figcaption><em>Blue arrows = image movement; Red arrows = stage movement.</em></figcaption>
+        </figure>
+    </div>
+</main>
+
+<!-- Include footer -->
+<div id="footer"></div>
+<script>
+    fetch('footer.html')
+        .then(res => res.text())
+        .then(data => document.getElementById('footer').innerHTML = data);
+</script>
+
+</body>
+</html>
